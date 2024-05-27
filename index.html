@@ -6,15 +6,14 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://telegra.ph/file/c0afbde55ab71538a6dda.jpg'); /* Ganti dengan URL gambar yang diinginkan */
-            background-size: cover;
-            background-position: center;
+            background-color: #f2f2f2; /* Warna latar belakang sebagai cadangan jika gambar tidak dimuat */
             margin: 0;
             padding: 0;
         }
         .container {
             max-width: 600px;
-            margin: 50px auto;
+            margin: 0 auto;
+            margin-top: 50px;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.8); /* Transparansi background container */
             border-radius: 10px;
@@ -52,18 +51,21 @@
         @media only screen and (max-width: 600px) {
             .container {
                 width: 90%;
-                margin-top: 20px; /* Menyesuaikan margin atas untuk perangkat seluler */
             }
-            .btn {
-                display: block; /* Mengubah tombol menjadi tampilan blok agar ukuran tombol sesuai dengan layar */
-                margin: 20px auto; /* Memberikan margin agar tombol berada di tengah */
-            }
+        }
+        /* Gaya untuk gambar */
+        .content-image {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Mengatasi margin tambahan di bawah gambar */
+            margin: 0 auto; /* Menengahkan gambar */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Informasi Pelanggan Hotspot SATRIA.NET</h2>
+        <h2><center>Informasi Pelanggan Hotspot SATRIA.NET</center></h2>
+        <img src="https://telegra.ph/file/c0afbde55ab71538a6dda.jpg" alt="Gambar" class="content-image">
         <table>
             <tr>
                 <th>Username :</th>
@@ -79,7 +81,7 @@
             </tr>
         </table>
     </div>
-    <div style="text-align:center;">
+    <div style="text-align:center;margin-top:20px;">
         <a href="javascript:history.go(-1);" class="btn">Kembali</a>
     </div>
 </body>

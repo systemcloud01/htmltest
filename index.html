@@ -19,7 +19,6 @@
         }
 
         .container {
-            max-width: 600px;
             margin: 50px auto;
             padding: 20px;
             background-color: #fff;
@@ -35,7 +34,7 @@
         }
 
         th, td {
-            padding: 20px; /* Padding lebih besar */
+            padding: 20px;
             border-bottom: 1px solid #ddd;
             color: #000;
         }
@@ -66,7 +65,7 @@
 
         @media only screen and (max-width: 600px) {
             .container {
-                width: 90%;
+                width: 100%; /* Lebar penuh pada perangkat seluler */
             }
             table {
                 font-size: 16px; /* Ukuran font pada tabel di perangkat seluler */
@@ -75,7 +74,7 @@
 
         @media only screen and (min-width: 601px) {
             .container {
-                width: 80%; /* Lebar kontainer di desktop */
+                max-width: 600px; /* Lebar maksimum 600px pada desktop */
             }
         }
     </style>

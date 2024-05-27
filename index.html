@@ -6,16 +6,18 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2; /* Warna latar belakang sebagai cadangan jika gambar tidak dimuat */
+            background-image: url('https://telegra.ph/file/c0afbde55ab71538a6dda.jpg');
+            background-size: cover;
+            background-position: center;
             margin: 0;
             padding: 0;
+            height: 100vh; /* Tinggi minimum untuk memastikan gambar latar belakang ditampilkan dengan baik */
         }
         .container {
             max-width: 600px;
-            margin: 0 auto;
-            margin-top: 50px;
+            margin: 50px auto;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Transparansi background container */
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
         }
@@ -53,19 +55,11 @@
                 width: 90%;
             }
         }
-        /* Gaya untuk gambar */
-        .content-image {
-            max-width: 100%;
-            height: auto;
-            display: block; /* Mengatasi margin tambahan di bawah gambar */
-            margin: 0 auto; /* Menengahkan gambar */
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2><center>Informasi Pelanggan Hotspot SATRIA.NET</center></h2>
-        <img src="https://telegra.ph/file/c0afbde55ab71538a6dda.jpg" alt="Gambar" class="content-image">
+        <h2>Informasi Pelanggan Hotspot SATRIA.NET</h2>
         <table>
             <tr>
                 <th>Username :</th>

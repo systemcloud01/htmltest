@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Informasi Pelanggan SATRIA.NET</title>
+    <title>SATRIA.NET - Cek User</title>
+    <link rel="stylesheet" href="css/style2.css">
     <style>
         body, html {
             min-height: 100%;
@@ -19,12 +20,8 @@
         }
 
         .container {
-            width: 100vw; /* Lebar kontainer 100% dari lebar viewport */
-            height: 100vh; /* Tinggi kontainer 100% dari tinggi viewport */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            max-width: 600px;
+            margin: 50px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 10px;
@@ -92,9 +89,9 @@
             <td><?php echo $user['profile']; ?></td>
         </tr>
     </table>
-    <div style="text-align:center;margin-top:20px;">
-        <a href="javascript:history.go(-1);" class="btn">Kembali</a>
-    </div>
+</div>
+<div style="text-align:center;margin-top:20px;">
+    <a href="javascript:history.go(-1);" class="btn">Kembali</a>
 </div>
 </body>
 </html>

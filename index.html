@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Informasi Pelanggan SATRIA.NET</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center;">Informasi Pelanggan Hotspot SATRIA.NET</h2>
+        <table>
+            <tr>
+                <th>Username</th>
+                <td><?php echo $user['name']; ?></td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td><?php echo $user['password']; ?></td>
+            </tr>
+            <tr>
+                <th>Jenis Langganan</th>
+                <td><?php echo $user['profile']; ?></td>
+            </tr>
+        </table>
+        <center><a href="javascript:history.go(-1);" class="btn">Tekan Disini Untuk Kembali Cek User</a></center>
+    </div>
+</body>
+</html>

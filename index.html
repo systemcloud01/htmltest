@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-            <html>
-            <head>
-                <title>Informasi Pelanggan SATRIA.NET</title>
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+    <title>Informasi Pelanggan SATRIA.NET</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-image: url('https://telegra.ph/file/6ced09754243ef40b588e.jpg'); /* Ganti dengan URL gambar yang diinginkan */
+            background-size: cover;
+            background-position: center;
             margin: 0;
             padding: 0;
         }
@@ -15,7 +17,7 @@
             margin: 0 auto;
             margin-top: 50px;
             padding: 20px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* Transparansi background container */
             border-radius: 10px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
         }
@@ -54,27 +56,27 @@
             }
         }
     </style>
-            </head>
-            <body>
-                <div class="container">
-                    <h2><center>Informasi Pelanggan Hotspot SATRIA.NET</center></h2>
-                    <table>
-                        <tr>
-                            <th>Username :</th>
-                            <td><?php echo $user['name']; ?></td>
-                        </tr>
-                        <tr>
-                            <th>Password :</th>
-                            <td><?php echo $user['password']; ?></td>
-                        </tr>
-                        <tr>
-                            <th>Jenis Langganan :</th>
-                            <td><?php echo $user['profile']; ?></td>
-                        </tr>
-                    </table>
-                </div>
-                <div style="text-align:center;margin-top:20px;">
-                <a href="javascript:history.go(-1);" class="btn">Kembali</a>
-            </div>
-            </body>
-            </html>
+</head>
+<body>
+    <div class="container">
+        <h2><center>Informasi Pelanggan Hotspot SATRIA.NET</center></h2>
+        <table>
+            <tr>
+                <th>Username :</th>
+                <td>$(username)</td>
+            </tr>
+            <tr>
+                <th>Password :</th>
+                <td>$(password)</td>
+            </tr>
+            <tr>
+                <th>Jenis Langganan :</th>
+                <td>$(profile)</td>
+            </tr>
+        </table>
+    </div>
+    <div style="text-align:center;margin-top:20px;">
+        <a href="javascript:history.go(-1);" class="btn">Kembali</a>
+    </div>
+</body>
+</html>

@@ -1,12 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>SATRIA.NET - Cek User</title>
-    <link rel="stylesheet" href="css/style2.css">
+<?php
+require("routeros_api.class.php");
+
+$API = new routeros_api();
+$API->debug = false;
+
+$user_mikrotik  = "bangkit";
+$password_mikrotik  = "Bangkit1990";
+$ip_mikrotik    = "103.172.70.227";
+
+// Username yang ingin Anda periksa informasinya
+$usernameToCheck = $_POST['username'];
+
+if($API->connect($ip_mikrotik, $user_mikrotik, $password_mikrotik)){
+    try {
+        // Kirim permintaan untuk mencari pengguna berdasarkan username
+        $API->write('/ip/hotspot/user/print', false);
+        $API->write('?name='.$usernameToCheck);
+
+        // Baca hasil dari permintaan
+        $read = $API->read();
+
+        // Periksa apakah pengguna ditemukan
+        if (count($read) > 0) {
+            $user = $read[0];
+            ?>
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Informasi Pelanggan SATRIA.NET</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body, html {
+         body, html {
             min-height: 100%;
             margin: 0;
             padding: 0;
@@ -71,35 +95,39 @@
             }
         }
     </style>
-</head>
-<body>
-
-<div class="ie-fixMinHeight">
-    <div class="main">
-        <div class="wrap animated fadeIn">
-            <div class="container">
-                <h2>Informasi Pelanggan Hotspot SATRIA.NET</h2>
-                <table>
-                    <tr>
-                        <th>Username</th>
-                        <td><?php echo $user['name']; ?></td>
-                    </tr>
-                    <tr>
-                        <th>Password</th>
-                        <td><?php echo $user['password']; ?></td>
-                    </tr>
-                    <tr>
-                        <th>Jenis Langganan</th>
-                        <td><?php echo $user['profile']; ?></td>
-                    </tr>
-                </table>
-            </div>
-            <div style="text-align:center;margin-top:20px;">
+            </head>
+            <body>
+                <div class="container">
+                    <h2><center>Informasi Pelanggan Hotspot SATRIA.NET</center></h2>
+                    <table>
+                        <tr>
+                            <th>Username</th>
+                            <td><?php echo $user['name']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Password</th>
+                            <td><?php echo $user['password']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Jenis Langganan</th>
+                            <td><?php echo $user['profile']; ?></td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="text-align:center;margin-top:20px;">
                 <a href="javascript:history.go(-1);" class="btn">Kembali</a>
             </div>
-        </div>
-    </div>
-</div>
-
-</body>
-</html>
+            </body>
+            </html>
+            <?php
+        } else {
+            echo "<script>window.location='http://103.172.70.227:208/us/usernotfound.html'</script>";
+        }
+    } catch (Exception $ex) {
+        echo "Error: " . $ex->getMessage();
+    }
+    $API->disconnect();
+} else {
+    echo "Tidak dapat terhubung ke router MikroTik.";
+}
+?>

@@ -1,29 +1,4 @@
-<?php
-require("routeros_api.class.php");
 
-$API = new routeros_api();
-$API->debug = false;
-
-$user_mikrotik  = "bangkit";
-$password_mikrotik  = "Bangkit1990";
-$ip_mikrotik    = "103.172.70.227";
-
-// Username yang ingin Anda periksa informasinya
-$usernameToCheck = $_POST['username'];
-
-if($API->connect($ip_mikrotik, $user_mikrotik, $password_mikrotik)){
-    try {
-        // Kirim permintaan untuk mencari pengguna berdasarkan username
-        $API->write('/ip/hotspot/user/print', false);
-        $API->write('?name='.$usernameToCheck);
-
-        // Baca hasil dari permintaan
-        $read = $API->read();
-
-        // Periksa apakah pengguna ditemukan
-        if (count($read) > 0) {
-            $user = $read[0];
-            ?>
             <!DOCTYPE html>
             <html>
             <head>
@@ -119,15 +94,4 @@ if($API->connect($ip_mikrotik, $user_mikrotik, $password_mikrotik)){
             </div>
             </body>
             </html>
-            <?php
-        } else {
-            echo "<script>window.location='http://103.172.70.227:208/us/usernotfound.html'</script>";
-        }
-    } catch (Exception $ex) {
-        echo "Error: " . $ex->getMessage();
-    }
-    $API->disconnect();
-} else {
-    echo "Tidak dapat terhubung ke router MikroTik.";
-}
-?>
+          

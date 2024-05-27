@@ -1,3 +1,6 @@
+Untuk memastikan bahwa konten tetap terlihat baik di perangkat seluler dan desktop, Anda dapat menggunakan media query untuk mengatur ukuran font dan margin agar lebih responsif. Di bawah ini adalah pembaruan pada kode Anda:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +29,10 @@
             border-radius: 10px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
             color: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         table {
@@ -67,6 +74,15 @@
         @media only screen and (max-width: 600px) {
             .container {
                 width: 90%;
+                margin-top: 20px;
+            }
+            
+            table {
+                font-size: 14px;
+            }
+            
+            th, td {
+                padding: 8px;
             }
         }
     </style>
@@ -85,9 +101,10 @@
         </tr>
         <tr>
             <th>Jenis Langganan</th>
-            <td><?php echo $user['profile']; ?></td>
-        </tr>
-    </table>
+<td><?php echo $user['profile']; ?></td>
+</tr>
+</table>
+
 </div>
 <div style="text-align:center;margin-top:20px;">
     <a href="javascript:history.go(-1);" class="btn">Kembali</a>

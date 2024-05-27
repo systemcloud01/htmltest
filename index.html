@@ -14,8 +14,7 @@
         }
         .container {
             max-width: 600px;
-            margin: 0 auto;
-            margin-top: 50px;
+            margin: 50px auto;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.8); /* Transparansi background container */
             border-radius: 10px;
@@ -53,13 +52,18 @@
         @media only screen and (max-width: 600px) {
             .container {
                 width: 90%;
+                margin-top: 20px; /* Menyesuaikan margin atas untuk perangkat seluler */
+            }
+            .btn {
+                display: block; /* Mengubah tombol menjadi tampilan blok agar ukuran tombol sesuai dengan layar */
+                margin: 20px auto; /* Memberikan margin agar tombol berada di tengah */
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2><center>Informasi Pelanggan Hotspot SATRIA.NET</center></h2>
+        <h2>Informasi Pelanggan Hotspot SATRIA.NET</h2>
         <table>
             <tr>
                 <th>Username :</th>
@@ -75,7 +79,7 @@
             </tr>
         </table>
     </div>
-    <div style="text-align:center;margin-top:20px;">
+    <div style="text-align:center;">
         <a href="javascript:history.go(-1);" class="btn">Kembali</a>
     </div>
 </body>

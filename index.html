@@ -73,25 +73,33 @@
     </style>
 </head>
 <body>
-<div class="container">
-    <h2>Informasi Pelanggan Hotspot SATRIA.NET</h2>
-    <table>
-        <tr>
-            <th>Username</th>
-            <td><?php echo $user['name']; ?></td>
-        </tr>
-        <tr>
-            <th>Password</th>
-            <td><?php echo $user['password']; ?></td>
-        </tr>
-        <tr>
-            <th>Jenis Langganan</th>
-            <td><?php echo $user['profile']; ?></td>
-        </tr>
-    </table>
+
+<div class="ie-fixMinHeight">
+    <div class="main">
+        <div class="wrap animated fadeIn">
+            <div class="container">
+                <h2>Informasi Pelanggan Hotspot SATRIA.NET</h2>
+                <table>
+                    <tr>
+                        <th>Username</th>
+                        <td><?php echo $user['name']; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Password</th>
+                        <td><?php echo $user['password']; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Jenis Langganan</th>
+                        <td><?php echo $user['profile']; ?></td>
+                    </tr>
+                </table>
+            </div>
+            <div style="text-align:center;margin-top:20px;">
+                <a href="javascript:history.go(-1);" class="btn">Kembali</a>
+            </div>
+        </div>
+    </div>
 </div>
-<div style="text-align:center;margin-top:20px;">
-    <a href="javascript:history.go(-1);" class="btn">Kembali</a>
-</div>
+
 </body>
 </html>
